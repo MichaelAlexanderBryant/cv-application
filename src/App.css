@@ -85,6 +85,10 @@ input, textarea {
     border-radius: 5px;
 }
 
+input:active, textarea:active {
+    background-color: white;
+}
+
 
 
 

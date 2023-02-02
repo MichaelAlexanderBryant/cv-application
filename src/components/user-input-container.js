@@ -1,7 +1,7 @@
 import React from 'react';
 import { GeneralInfo } from './general-info';
-import { Education } from './education';
-import { WorkExperience } from './work-experience';
+import { EducationContainer } from './education-container';
+import { WorkExperienceContainer } from './work-experience-container';
 
 class UserInput extends React.Component {
 
@@ -12,10 +12,12 @@ class UserInput extends React.Component {
                 <div id="form-container">
                     <div id="forms">
                         <GeneralInfo />
-                        <Education />
+                        <EducationContainer />
                         <button>Add More Education</button>
-                        <WorkExperience />
+                        <button>Remove Education</button>
+                        <WorkExperienceContainer />
                         <button>Add More Work Experience</button>
+                        <button>Remove Work Experience</button>
                     </div>
                 </div>
             </div>
