@@ -10,11 +10,13 @@ class UserInput extends React.Component {
             <div id="left-panel">
                 <h2>Your Information</h2>
                 <div id="form-container">
-                    <GeneralInfo />
-                    <Education />
-                    <button>Add More Education</button>
-                    <WorkExperience />
-                    <button>Add More Work Experience</button>
+                    <div id="forms">
+                        <GeneralInfo />
+                        <Education />
+                        <button>Add More Education</button>
+                        <WorkExperience />
+                        <button>Add More Work Experience</button>
+                    </div>
                 </div>
             </div>
         )
