@@ -16,8 +16,15 @@ html, body {
     grid-template-rows: 10% auto;
 }
 
-#header {
+#header-container {
     grid-row: 1 / 2;
+    display:grid;
+    align-items: center;
+    grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
+}
+
+#header {
+    grid-column: 2 / 3;
     background-color: white;
     color: #5c5c5c;
     display: flex;
@@ -31,18 +38,26 @@ svg {
 
 #main-content {
     grid-row: 2 / 3;
-    /* background-color: #f9f9f9; */
-    background-color: #a7a5a5;
+    background-color: #f9f9f9;
+    /* background-color: #a7a5a5; */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
 }
 
 #left-panel {
-    grid-column: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+#form-container {
+    height: 90%;
+    width: 90%;
+    padding: 0px 30px;
+    background-color: white;
+    border: 2px solid #e8e8e8;
 }
 
 #right-panel {
-    grid-column: 2 / 3;
+    grid-column: 4 / 5;
 }
 
 h2 {
@@ -53,4 +68,5 @@ h2 {
     height: 90%;
     width: 90%;
     background-color: white;
+    border: 2px solid #e8e8e8;
 }
