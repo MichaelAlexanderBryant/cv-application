@@ -7,7 +7,8 @@ class UserInput extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="left-panel">
+                <h2>Your Information</h2>
                 <GeneralInfo />
                 <Education />
                 <button>Add More Education</button>
