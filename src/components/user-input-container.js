@@ -4,7 +4,9 @@ import { EducationContainer } from './education-container';
 import { WorkExperienceContainer } from './work-experience-container';
 
 class UserInput extends React.Component {
-
+    // Next: create a state which increments/decrements with click of button
+    // and pass the state as a property to the education and work exp containers
+    // then in each container, add/remove components based on the property
     render() {
         return (
             <div id="left-panel">
