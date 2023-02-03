@@ -60,12 +60,12 @@ class UserInput extends React.Component {
                 <div id="form-container">
                     <div id="forms">
                         <GeneralInfo previewOn={this.state.previewMode} />
-                        <EducationContainer numberOfEducationComponents={this.state.numberOfEducation} />
+                        <EducationContainer numberOfEducationComponents={this.state.numberOfEducation} previewOn={this.state.previewMode}/>
                         <div className="buttons">
                             <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.addEducation}>+</button>
                             <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.removeEducation}>-</button>
                         </div>
-                        <WorkExperienceContainer numberOfWorkComponents={this.state.numberOfWork} />
+                        <WorkExperienceContainer numberOfWorkComponents={this.state.numberOfWork} previewOn={this.state.previewMode}/>
                         <div className="buttons">
                             <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.addWork}>+</button>
                             <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.removeWork}>-</button>

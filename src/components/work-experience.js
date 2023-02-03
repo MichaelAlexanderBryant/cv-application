@@ -4,7 +4,7 @@ class WorkExperience extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={this.props.previewOn ? "hide" : ""}>
                 <form id="work-input">
                     <span className="input-field">
                         <label htmlFor="company-name">Company Name</label>

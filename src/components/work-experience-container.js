@@ -6,10 +6,10 @@ class WorkExperienceContainer extends React.Component {
     render() {
         return (
             <div>
-                <h3>
+                <h3 className={this.props.previewOn ? "hide" : ""}>
                     Work Experience
                 </h3>
-                {Array.from(Array(this.props.numberOfWorkComponents)).map((x, index) => <WorkExperience key={index} />)}
+                {Array.from(Array(this.props.numberOfWorkComponents)).map((x, index) => <WorkExperience key={index} previewOn={this.props.previewOn}/>)}
 
             </div>
         )
