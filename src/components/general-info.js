@@ -9,16 +9,16 @@ class GeneralInfo extends React.Component {
                     General
                 </h3>
                 <form id="general-input">
-                    <span class="input-field">
-                        <label for="name">Name</label>
+                    <span className="input-field">
+                        <label htmlFor="name">Name</label>
                         <input type="text" name="name"></input>
                     </span>
-                    <span class="input-field">
-                        <label for="email">Email</label>
+                    <span className="input-field">
+                        <label htmlFor="email">Email</label>
                         <input type="text" name="email"></input>
                     </span>
-                    <span class="input-field">
-                        <label for="phone">Phone Number</label>
+                    <span className="input-field">
+                        <label htmlFor="phone">Phone Number</label>
                         <input type="text" name="phone"></input>
                     </span>
                 </form>
