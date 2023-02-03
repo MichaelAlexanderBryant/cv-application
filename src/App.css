@@ -58,7 +58,7 @@ svg {
     background-color: white;
     border: 2px solid #e8e8e8;
     overflow:hidden;
-    margin-bottom: 66px;
+    margin-bottom: 80px;
 }
 
 #forms {
@@ -114,8 +114,7 @@ input:active, textarea:active {
 }
 
 #submit-button {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 20px 0px;
     height: 50px;
     width: 20%;
     background-color: #00adc5;
