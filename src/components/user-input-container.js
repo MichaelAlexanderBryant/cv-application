@@ -8,11 +8,13 @@ class UserInput extends React.Component {
         super();
         this.state = {
             numberOfEducation: 1,
-            numberOfWork: 1
+            numberOfWork: 1,
+            previewMode: false
         }
 
         this.addEducation = this.addEducation.bind(this);
         this.removeEducation = this.removeEducation.bind(this);
+        this.getPreview = this.getPreview.bind(this);
     };
 
     addEducation = () => {
@@ -42,26 +44,36 @@ class UserInput extends React.Component {
         })
     };
 
+    getPreview() {
+        this.setState({
+            previewMode: !this.state.previewMode
+        });
+    };
+
+    
+    
+
     render() {
         return (
             <div id="left-panel">
                 <h2>Your Information</h2>
                 <div id="form-container">
                     <div id="forms">
-                        <GeneralInfo />
+                        <GeneralInfo previewOn={this.state.previewMode} />
                         <EducationContainer numberOfEducationComponents={this.state.numberOfEducation} />
                         <div className="buttons">
-                            <button className="increment-decrement-buttons" onClick={this.addEducation}>+</button>
-                            <button className="increment-decrement-buttons" onClick={this.removeEducation}>-</button>
+                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.addEducation}>+</button>
+                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.removeEducation}>-</button>
                         </div>
                         <WorkExperienceContainer numberOfWorkComponents={this.state.numberOfWork} />
                         <div className="buttons">
-                            <button className="increment-decrement-buttons" onClick={this.addWork}>+</button>
-                            <button className="increment-decrement-buttons" onClick={this.removeWork}>-</button>
+                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.addWork}>+</button>
+                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.removeWork}>-</button>
                         </div>
                     </div>
                     <div id="submit-align">
-                        <button id="submit-button">Submit</button>
+                        <button id="submit-button" className={this.state.previewMode ? "hide" : "submit-edit-buttons"} onClick={this.getPreview}>Submit</button>
+                        <button id="edit-button" className={this.state.previewMode ? "submit-edit-buttons" : "hide"} onClick={this.getPreview}>Edit</button>
                     </div>
                 </div>
             </div>
