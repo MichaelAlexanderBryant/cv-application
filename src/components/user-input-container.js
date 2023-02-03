@@ -4,7 +4,7 @@ import { EducationContainer } from './education-container';
 import { WorkExperienceContainer } from './work-experience-container';
 
 class UserInput extends React.Component {
-    constructor() {
+    constructor({ onQuery }) {
         super();
         this.state = {
             numberOfEducation: 1,
@@ -14,19 +14,14 @@ class UserInput extends React.Component {
         this.addEducation = this.addEducation.bind(this);
         this.removeEducation = this.removeEducation.bind(this);
     };
-    // Next: create a state which increments/decrements with click of button
-    // and pass the state as a property to the education and work exp containers
-    // then in each container, add/remove components based on the property
 
-    addEducation = (event) => {
-        // event.preventDefault()
+    addEducation = () => {
         this.setState({
             numberOfEducation: this.state.numberOfEducation + 1
         })
     };
 
-    removeEducation = (event) => {
-        // event.preventDefault()
+    removeEducation = () => {
         if (this.state.numberOfEducation > 0) {
             this.setState({
                 numberOfEducation: this.state.numberOfEducation - 1
@@ -35,15 +30,13 @@ class UserInput extends React.Component {
         
     };
 
-    addWork = (event) => {
-        event.preventDefault()
+    addWork = () => {
         this.setState({
             numberOfWork: this.state.numberOfWork + 1
         })
     };
 
-    removeWork = (event) => {
-        event.preventDefault()
+    removeWork = () => {
         this.setState({
             numberOfWork: this.state.numberOfWork - 1
         })
@@ -57,11 +50,18 @@ class UserInput extends React.Component {
                     <div id="forms">
                         <GeneralInfo />
                         <EducationContainer numberOfEducationComponents={this.state.numberOfEducation} />
-                        <button onClick={this.addEducation}>Add More Education</button>
-                        <button onClick={this.removeEducation}>Remove Education</button>
+                        <div className="buttons">
+                            <button className="increment-decrement-buttons" onClick={this.addEducation}>+</button>
+                            <button className="increment-decrement-buttons" onClick={this.removeEducation}>-</button>
+                        </div>
                         <WorkExperienceContainer numberOfWorkComponents={this.state.numberOfWork} />
-                        <button onClick={this.addWork}>Add More Work Experience</button>
-                        <button onClick={this.removeWork}>Remove Work Experience</button>
+                        <div className="buttons">
+                            <button className="increment-decrement-buttons" onClick={this.addWork}>+</button>
+                            <button className="increment-decrement-buttons" onClick={this.removeWork}>-</button>
+                        </div>
+                    </div>
+                    <div id="submit-align">
+                        <button id="submit-button">Submit</button>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,10 @@ import React from 'react';
 
 class GeneralInfo extends React.Component {
 
+    handleChange(event) {
+        this.onQuery(event.target.handle)
+    }
+
     render() {
         return (
             <div>
