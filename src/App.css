@@ -7,17 +7,18 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden;  
+    /* overflow: hidden;   */
 }
 
 #container {
-    height: 100vh;
-    display:grid;
-    grid-template-rows: 10% auto;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    /* grid-template-rows: 100px auto; */
 }
 
 #header-container {
-    grid-row: 1 / 2;
+    flex: 1;
     display:grid;
     align-items: center;
     grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
@@ -38,7 +39,7 @@ svg {
 }
 
 #main-content {
-    grid-row: 2 / 3;
+    flex: 10;
     background-color: #f9f9f9;
     /* background-color: #a7a5a5; */
     display: grid;
@@ -50,11 +51,12 @@ svg {
     /* border: 1px solid black; */
 }
 
-#form-container {
+#form-container, #on-paper-preview {
     height: 90%;
     width: 100%;
     background-color: white;
     border: 2px solid #e8e8e8;
+    overflow: scroll;
 }
 
 #forms {
@@ -89,6 +91,10 @@ input:active, textarea:active {
     background-color: white;
 }
 
+#education-input, #work-input {
+    padding-bottom: 10px;
+}
+
 
 
 
@@ -103,11 +109,4 @@ h3 {
 
 h2 {
     color: #737373;
-}
-
-#on-paper-preview {
-    height: 90%;
-    width: 100%;
-    background-color: white;
-    border: 2px solid #e8e8e8;
 }
