@@ -56,7 +56,8 @@ class UserInput extends React.Component {
     render() {
         return (
             <div id="left-panel">
-                <h2>Your Information</h2>
+                <h2 className={this.state.previewMode ? "hide" : ""}>Your Information</h2>
+                <h2 className={this.state.previewMode ? "" : "hide"}>CV Preview</h2>
                 <div id="form-container">
                     <div id="forms">
                         <GeneralInfo previewOn={this.state.previewMode} />
