@@ -49,7 +49,7 @@ class GeneralInfo extends React.Component {
                             </span>
                         </form>
                 </div>
-                <div className="cv-preview">
+                <div className={this.props.previewOn ? "" : "hide"}>
                     <div id="name-preview">{this.state.nameInput}</div>
                     <div id="email-preview">{this.state.emailInput}</div>
                     <div id="phone-preview">{this.state.phoneInput}</div>
