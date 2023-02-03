@@ -142,3 +142,14 @@ h2 {
 .hide {
     display:none;
 }
+
+#name-preview {
+    text-align: center;
+    font-size: 3em;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+#other-info {
+    text-align: center;
+}

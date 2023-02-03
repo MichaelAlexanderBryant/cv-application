@@ -51,8 +51,12 @@ class GeneralInfo extends React.Component {
                 </div>
                 <div className={this.props.previewOn ? "" : "hide"}>
                     <div id="name-preview">{this.state.nameInput}</div>
-                    <div id="email-preview">{this.state.emailInput}</div>
-                    <div id="phone-preview">{this.state.phoneInput}</div>
+                    <div id="other-info">
+                        {this.state.emailInput === "" ?
+                        (this.state.phoneInput === "" ?
+                         "" : this.state.phoneInput) : (this.state.phoneInput === "" ?
+                          this.state.emailInput : this.state.emailInput + " | " + this.state.phoneInput)}
+                        </div>
                 </div>
             </div>
         )
