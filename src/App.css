@@ -165,13 +165,15 @@ h2 {
     text-align: center;
 }
 
-.education-first-line, .education-first-line {
+.education-first-line, .work-first-line {
     display:grid;
     grid-template-columns: 75% auto;
+    padding-bottom: 2px;
 }
 
 .school-name-preview, .company-name-preview {
     font-weight: bold;
+    
 }
 
 .position-preview {
