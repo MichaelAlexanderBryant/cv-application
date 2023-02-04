@@ -66,12 +66,14 @@ class WorkExperience extends React.Component {
                         </span>
                     </form>
                 </div>
-                <div className={this.props.previewOn ? "":"hide"}>
-                    <div className="company-name-preview">{this.state.companyNameInput}</div>
+                <div className={this.props.previewOn ? "work-entry":"hide"}>
+                    <div className="education-first-line">
+                        <span className="company-name-preview">{this.state.companyNameInput}</span>
+                        <span className="date-preview">{this.state.startDateInput} - {this.state.endDateInput}</span>
+                    </div>
                     <div className="position-preview">{this.state.positionInput}</div>
                     <div className="tasks-preview">{this.state.tasksInput}</div>
-                    <div className="start-date-preview">{this.state.startDateInput}</div>
-                    <div className="end-date-preview">{this.state.endDateInput}</div>
+
                 </div>
             </div>
         )

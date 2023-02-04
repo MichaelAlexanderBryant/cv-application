@@ -30,7 +30,7 @@ class GeneralInfo extends React.Component {
         return (
             <div>
                 <div className={this.props.previewOn ? "hide" : ""}>
-                    <h3>
+                    <h3 className='h3-grey'>
                         General
                     </h3>
                     

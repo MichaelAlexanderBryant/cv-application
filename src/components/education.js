@@ -46,10 +46,12 @@ class Education extends React.Component {
                         </span>
                     </form>
                 </div>
-                <div className={this.props.previewOn ? "":"hide"}>
-                    <div className="school-name-preview">{this.state.schoolNameInput}</div>
+                <div className={this.props.previewOn ? "university-entry":"hide"}>
+                    <div className="education-first-line">
+                        <span className="school-name-preview">{this.state.schoolNameInput}</span>
+                        <span className="grad-date-preview">{this.state.gradDateInput}</span>
+                    </div>
                     <div className="degree-preview">{this.state.degreeInput}</div>
-                    <div className="grad-date-preview">{this.state.gradDateInput}</div>
                 </div>
             </div>
         )
