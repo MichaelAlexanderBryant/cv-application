@@ -1,61 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-class Education extends React.Component {
+function Education(props) {
 
-    constructor() {
-        super();
-        this.state = {
-            schoolNameInput: "",
-            degreeInput: "",
-            gradDateInput: ""
-        };
+    const [schoolNameInput, setSchoolNameInput] = useState("");
+    const [degreeInput, setDegreeInput] = useState("");
+    const [gradDateInput, setGradDateInput] = useState("");
 
-        this.getSchoolName = this.getSchoolName.bind(this);
-        this.getDegree = this.getDegree.bind(this);
-        this.getGradDate = this.getGradDate.bind(this);
-    };
-
-    getSchoolName(event) {
-        this.setState({schoolNameInput: event.target.value})
-    };
-
-    getDegree(event) {
-        this.setState({degreeInput: event.target.value})
-    };
-
-    getGradDate(event) {
-        this.setState({gradDateInput: event.target.value})
-    };
-
-    render() {
         return (
             <div>
-                <div className={this.props.previewOn ? "hide" : ""}>
+                <div className={props.previewOn ? "hide" : ""}>
                     <form id="education-input">
                         <span className="input-field">
                             <label htmlFor="school-name">School Name</label>
-                            <input type="text" name="name" onChange={this.getSchoolName}></input>
+                            <input type="text" name="name" onChange={(event) => setSchoolNameInput(event.target.value)}></input>
                         </span>
                         <span className="input-field">
                             <label htmlFor="degree">Degree</label>
-                            <input type="text" name="degree" onChange={this.getDegree}></input>
+                            <input type="text" name="degree" onChange={(event) => setDegreeInput(event.target.value)}></input>
                         </span>
                         <span className="input-field">
                             <label htmlFor="attend-date">Date</label>
-                            <input type="text" name="attend-date" onChange={this.getGradDate}></input>
+                            <input type="text" name="attend-date" onChange={(event) => setGradDateInput(event.target.value)}></input>
                         </span>
                     </form>
                 </div>
-                <div className={this.props.previewOn ? "university-entry":"hide"}>
+                <div className={props.previewOn ? "university-entry":"hide"}>
                     <div className="education-first-line">
-                        <span className="school-name-preview">{this.state.schoolNameInput}</span>
-                        <span className="grad-date-preview">{this.state.gradDateInput}</span>
+                        <span className="school-name-preview">{schoolNameInput}</span>
+                        <span className="grad-date-preview">{gradDateInput}</span>
                     </div>
-                    <div className="degree-preview">{this.state.degreeInput}</div>
+                    <div className="degree-preview">{degreeInput}</div>
                 </div>
             </div>
         )
-    }
 }
 
 export { Education };
