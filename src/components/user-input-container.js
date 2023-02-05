@@ -1,85 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { GeneralInfo } from './general-info';
 import { EducationContainer } from './education-container';
 import { WorkExperienceContainer } from './work-experience-container';
 
-class UserInput extends React.Component {
-    constructor({ onQuery }) {
-        super();
-        this.state = {
-            numberOfEducation: 1,
-            numberOfWork: 1,
-            previewMode: false
-        }
+function UserInput() {
 
-        this.addEducation = this.addEducation.bind(this);
-        this.removeEducation = this.removeEducation.bind(this);
-        this.getPreview = this.getPreview.bind(this);
-    };
+    const [numberOfEducation, setNumberOfEducation] = useState(1);
+    const [numberOfWork, setNumberOfWork] = useState(1);
+    const [previewMode, setPreviewMode] = useState(false);    
 
-    addEducation = () => {
-        this.setState({
-            numberOfEducation: this.state.numberOfEducation + 1
-        })
-    };
-
-    removeEducation = () => {
-        if (this.state.numberOfEducation > 0) {
-            this.setState({
-                numberOfEducation: this.state.numberOfEducation - 1
-            })
-        };
-        
-    };
-
-    addWork = () => {
-        this.setState({
-            numberOfWork: this.state.numberOfWork + 1
-        })
-    };
-
-    removeWork = () => {
-        this.setState({
-            numberOfWork: this.state.numberOfWork - 1
-        })
-    };
-
-    getPreview() {
-        this.setState({
-            previewMode: !this.state.previewMode
-        });
-    };
-
-    
-    
-
-    render() {
-        return (
-            <div id="left-panel">
-                <h2 className={this.state.previewMode ? "hide" : ""}>Your Information</h2>
-                <h2 className={this.state.previewMode ? "" : "hide"}>CV Preview</h2>
-                <div id="form-container">
-                    <div id="forms">
-                        <GeneralInfo previewOn={this.state.previewMode} />
-                        <EducationContainer numberOfEducationComponents={this.state.numberOfEducation} previewOn={this.state.previewMode}/>
-                        <div className="buttons">
-                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.addEducation}>+</button>
-                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.removeEducation}>-</button>
-                        </div>
-                        <WorkExperienceContainer numberOfWorkComponents={this.state.numberOfWork} previewOn={this.state.previewMode}/>
-                        <div className="buttons">
-                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.addWork}>+</button>
-                            <button className={this.state.previewMode ? "hide" : "increment-decrement-buttons"} onClick={this.removeWork}>-</button>
-                        </div>
+    return (
+        <div id="left-panel">
+            <h2 className={previewMode ? "hide" : ""}>Your Information</h2>
+            <h2 className={previewMode ? "" : "hide"}>CV Preview</h2>
+            <div id="form-container">
+                <div id="forms">
+                    <GeneralInfo previewOn={previewMode} />
+                    <EducationContainer numberOfEducationComponents={numberOfEducation} previewOn={previewMode}/>
+                    <div className="buttons">
+                        <button className={previewMode ? "hide" : "increment-decrement-buttons"} onClick={() => {setNumberOfEducation(numberOfEducation + 1)}}>+</button>
+                        <button className={previewMode ? "hide" : "increment-decrement-buttons"} onClick={() => {setNumberOfEducation(numberOfEducation - 1)}}>-</button>
                     </div>
-                    <div id="submit-align">
-                        <button id="submit-button" className={this.state.previewMode ? "hide" : "submit-edit-buttons"} onClick={this.getPreview}>Submit</button>
-                        <button id="edit-button" className={this.state.previewMode ? "submit-edit-buttons" : "hide"} onClick={this.getPreview}>Edit</button>
+                    <WorkExperienceContainer numberOfWorkComponents={numberOfWork} previewOn={previewMode}/>
+                    <div className="buttons">
+                        <button className={previewMode ? "hide" : "increment-decrement-buttons"} onClick={() => {setNumberOfWork(numberOfWork + 1)}}>+</button>
+                        <button className={previewMode ? "hide" : "increment-decrement-buttons"} onClick={() => {setNumberOfWork(numberOfWork - 1)}}>-</button>
                     </div>
                 </div>
+                <div id="submit-align">
+                    <button id="submit-button" className={previewMode ? "hide" : "submit-edit-buttons"} onClick={() => {setPreviewMode(!previewMode)}}>Submit</button>
+                    <button id="edit-button" className={previewMode ? "submit-edit-buttons" : "hide"} onClick={() => {setPreviewMode(!previewMode)}}>Edit</button>
+                </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export { UserInput };
